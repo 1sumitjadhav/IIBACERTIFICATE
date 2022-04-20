@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %} 
+    {% comment %} 
+    <input type="number" name="Numberofcoupon" class="form-control" /> {% endcomment %}
+    <button type="submit">GEN 50</button>
+</form>
+
+<a href="{% url 'couponVal' %}"> validate </a>
+{% endblock %}

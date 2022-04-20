@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="POST" action="{% url 'couponVal' %}"> 
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Enter your coupon</label>
+        <input type="text" class="form-control" name="coup">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<a href="{% url 'generate' %}"> GENERATE </a>
+
+  
+{% endblock %}
