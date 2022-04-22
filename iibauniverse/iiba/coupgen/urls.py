@@ -5,5 +5,7 @@ from . import views
 urlpatterns = [
    path('couponVal',views.couponVal, name='couponVal'),
    path('generatecoupon',views.generatecoupon, name='generate'),
+   path('<int:id>/checkingCouponStatus',views.checkingCouponStatus,name='checkingCouponStatus'),  
+
 #    path('/couponVal',views.couponVal, name='couponVal'),
 ]
