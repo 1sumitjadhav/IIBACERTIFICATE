@@ -56,15 +56,11 @@ def couponVal(request):
     return render(request,'coupgen/couponVal.html')
 
 
-def home(request):
-    return render(request, 'coupgen/home.html')
 
 def checkingCouponStatus(request,id):
     getstatus=coupon.objects.get(id=id)
     leftdays =getstatus.expire_date- getstatus.publish_date
     print(leftdays)
     return render (request, 'coupgen/checkingCouponStatus.html',{'getStatus':getstatus,'leftDays':leftdays})
-
-
 
 # Create your views here.

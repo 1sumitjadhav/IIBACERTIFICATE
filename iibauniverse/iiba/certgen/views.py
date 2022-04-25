@@ -84,10 +84,9 @@ def Upload(request):
               
             obj.activated = True
             obj.save()
-            return HttpResponse(request, 'Sent Successfully')
+            return HttpResponse('Sent Successfully')
         # return redirect(request, 'input/event.html')
         # return FileResponse(as_attachment=True, filename=f'{name}.pdf')
     context ={'form':form}
     return render(request, 'certgen/cert.html', context)
-
 # Create your views here.

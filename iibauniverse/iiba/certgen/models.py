@@ -7,6 +7,3 @@ class Csv(models.Model):
 
     def __str__(self):
         return self.event
-
-
-# Create your models here.

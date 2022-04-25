@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--!2b+5&m&$v5s_zm$=-y#j!as@_0h4zrmm&u9%ail8pr^gi7b*'
+SECRET_KEY = 'django-insecure-j@o@bui$%(z7d0pik2cm9f*eymm=i^hmt*pey_&@cbn742_^=r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    
     'certgen.apps.CertgenConfig',
-    'coupgen.apps.CoupgenConfig'
+    'coupgen.apps.CoupgenConfig',
 ]
 
 MIDDLEWARE = [
@@ -59,8 +59,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-
-            BASE_DIR / 'templates'
+        BASE_DIR / 'templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -133,6 +132,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 1025
 EMAIL_USER_TLS = True
 EMAIL_HOST_PASSWORD = 'careteam1234' 
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
