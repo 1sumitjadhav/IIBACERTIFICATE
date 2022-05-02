@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<form action="" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+{{form}}
+<button type="submit" value="submit"> Submit</button>
+
+</form>
+
+<hr>
+Make sure that in csv
+<br> row 1 is name
+<br> row 2 is email
+<br> row 3 is course
+  
+{% endblock %}

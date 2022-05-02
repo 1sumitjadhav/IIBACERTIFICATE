@@ -1,0 +1,44 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<div class="container" style="display: flex;">
+    <div class="card">
+        <div class="card-border-top">
+        </div>
+        <h2 style="display: flex;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        margin-top: 42%;">Starting date</h2>
+        <span> {{getStatus.publish_date}}</span>
+
+    </div>
+    <div class="card">
+        <div class="card-border-top">
+        </div>
+        <h2 style="display: flex;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        margin-top: 42%;">Expire date</h2>
+        <span> {{getStatus.expire_date }}</span>
+
+    </div>
+    <div class="card">
+        <div class="card-border-top">
+        </div>
+        <h2 style="display: flex;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        margin-top: 42%;">Left Days</h2>
+        <span> {{leftDays}}</span>
+
+    </div>
+</div>
+
+
+
+  
+{% endblock %}
