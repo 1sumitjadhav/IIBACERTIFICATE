@@ -25,6 +25,8 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('certificates/', include('certgen.urls')),
     path('coupons/', include('coupgen.urls')),
+    path('',include('pages.urls')),
+    path('user_reg/', include('user_reg.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
