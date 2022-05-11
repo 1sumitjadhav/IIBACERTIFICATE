@@ -1,17 +1,18 @@
+import datetime
 from asyncore import write
 import code
 from urllib import request
 from django.forms import NumberInput
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import redirect, render
 import random
 from .models import Coupon_gener, coupon
 from datetime import datetime
 from datetime import date
+from django.utils import timezone
 import datetime
-
-
-
+from dateutil.relativedelta import relativedelta
 
 def generatecoupon(request):
     if request.method =="POST":
@@ -55,12 +56,18 @@ def couponVal(request):
             return redirect(f"""{getIDc}/checkingCouponStatus""",{id:'getIDc'})
     return render(request,'coupgen/couponVal.html')
 
-
-
 def checkingCouponStatus(request,id):
+    todayDate = date.today()
+    # print(todayDate)
     getstatus=coupon.objects.get(id=id)
-    leftdays =getstatus.expire_date- getstatus.publish_date
-    print(leftdays)
-    return render (request, 'coupgen/checkingCouponStatus.html',{'getStatus':getstatus,'leftDays':leftdays})
-
-# Create your views here.
+    leftdays =(getstatus.expire_date- getstatus.publish_date).days
+    getEx =  getstatus.expire_date.date()
+    daysLeft =""
+    if getEx > todayDate:
+        daysLeft =leftdays
+        return render (request, 'coupgen/checkingCouponStatus.html',{'getStatus':getstatus,'leftDays':daysLeft })
+        print("it's working")
+    else:
+        daysLeft ="Your coupon code is expired"
+        return render (request, 'coupgen/couponExpired.html',{'getStatus':getstatus,'leftDays':daysLeft })
+        print("it's not working")

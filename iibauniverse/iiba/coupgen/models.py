@@ -84,7 +84,3 @@ class coupon(models.Model):
     actives = ActiveManager(from_date='publish_date', to_date='expire_date')
     def __str__(self):
         return self.code
-
-    
-
-# Create your models here.
